@@ -2,4 +2,4 @@ import pandas as pd
 
 df = pd.read_csv('input.txt')
 
-len(df)
+print(len(df))
