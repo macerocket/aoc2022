@@ -23,7 +23,7 @@ def test_day1_part2(capsys):
     Print the sum of the top 3 calorie carriers
     """
     calories = sorted(get_calories('day1/input.txt'))
-    top_three = calories[-1] + calories[-2] + calories[-3]
+    top_three = sum(calories[-3:])
 
     with capsys.disabled():
         print(f"Answer for day 1 part 2: {top_three}")

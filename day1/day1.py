@@ -16,8 +16,8 @@ def get_calories(filename: str) -> list[int]:
 
     for line in data:
         if line == "" :
-                calories.append(accumulator)
-                accumulator = 0
+            calories.append(accumulator)
+            accumulator = 0
         else :
             accumulator = accumulator + int(line)
 
