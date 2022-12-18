@@ -11,6 +11,7 @@ def get_max_calories(filename: str) -> int:
     accumulator = 0
 
     data = open(filename, "r").readlines()
+    data = [x.strip() for x in data]
 
     for line in data:
         if line == "" :
