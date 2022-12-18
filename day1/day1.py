@@ -21,6 +21,9 @@ def get_max_calories(filename: str) -> int:
         else :
             accumulator = accumulator + int(line)
 
+        if line != "" :
+            if accumulator > maximum:
+                maximum = accumulator
     return maximum
 
 if __name__ == "__main__":
