@@ -3,11 +3,12 @@
 Day 1
 """
 
-def get_max_calories(filename: str) -> int:
+def get_calories(filename: str) -> list[int]:
     """
-    Get the elf with the maximum calries from the input file
+    the Elves would instead like to know the total Calories carried by the
+    top three Elves carrying the most Calories.
     """
-    maximum = 0
+    calories = []
     accumulator = 0
 
     data = open(filename, "r").readlines()
@@ -15,16 +16,14 @@ def get_max_calories(filename: str) -> int:
 
     for line in data:
         if line == "" :
-            if accumulator > maximum:
-                maximum = accumulator
-            accumulator = 0
+                calories.append(accumulator)
+                accumulator = 0
         else :
             accumulator = accumulator + int(line)
 
         if line != "" :
-            if accumulator > maximum:
-                maximum = accumulator
-    return maximum
+            calories.append(accumulator)
+    return calories
 
 if __name__ == "__main__":
-    get_max_calories('day1/input.txt')
+    get_calories('day1/input.txt')
