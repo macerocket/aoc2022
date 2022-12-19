@@ -15,14 +15,17 @@ def get_calories(filename: str) -> list[int]:
     data = [x.strip() for x in data]
 
     for line in data:
-        if line == "" :
+        if line != "" :
+            accumulator = accumulator + int(line)
+        else :
             calories.append(accumulator)
             accumulator = 0
-        else :
-            accumulator = accumulator + int(line)
 
-        if line != "" :
-            calories.append(accumulator)
+    # If the last line was not empty, push the last accumulated
+    # calorie count onto the array
+    if len(data) > 0 and line != "" :
+        calories.append(accumulator)
+
     return calories
 
 if __name__ == "__main__":
