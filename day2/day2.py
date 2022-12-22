@@ -141,13 +141,15 @@ def get_total_score_part2(filename: str) -> int:
 
     for line in data:
         (opponent_played, outcome) = line.split(" ")
-        if outcome == "X": required_outcome = LOSE
-        if outcome == "Y": required_outcome = DRAW
-        if outcome == "Z": required_outcome = WIN
+        if outcome == "X":
+            required_outcome = LOSE
+        if outcome == "Y":
+            required_outcome = DRAW
+        if outcome == "Z":
+            required_outcome = WIN
         
         correct_play:str = get_correct_play(opponent_played, outcome)
         grand_total += calculate_score(required_outcome, correct_play)
-        print(f"score for {opponent_played}, {required_outcome} (correct play is {correct_play}) is {calculate_score(required_outcome, correct_play)}")
 
     return grand_total
 
